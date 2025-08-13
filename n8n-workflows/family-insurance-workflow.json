@@ -1,0 +1,285 @@
+{
+  "name": "Sheli Mizrahi Family Insurance Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "family-insurance-webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract family data from webhook\nconst familyData = $input.first().json;\n\n// Validate required fields\nif (!familyData.familyName || !familyData.members) {\n  throw new Error('Missing required family data');\n}\n\n// Process family members\nconst processedMembers = familyData.members.map(member => ({\n  id: member.id || Math.random().toString(36).substr(2, 9),\n  name: member.name,\n  age: parseInt(member.age) || 0,\n  relationship: member.relationship,\n  insuranceType: member.insuranceType || 'unknown',\n  status: member.status || 'pending',\n  documents: member.documents || 0,\n  lastUpdated: new Date().toISOString().split('T')[0]\n}));\n\n// Calculate family metrics\nconst totalPolicies = processedMembers.reduce((sum, member) => {\n  const policies = member.insuranceType.split('+').length;\n  return sum + policies;\n}, 0);\n\nconst totalValue = familyData.totalValue || 0;\nconst riskLevel = familyData.riskLevel || 'medium';\n\nreturn [{\n  json: {\n    familyId: familyData.id || Math.random().toString(36).substr(2, 9),\n    familyName: familyData.familyName,\n    members: processedMembers,\n    totalPolicies,\n    totalValue,\n    riskLevel,\n    lastAssessment: new Date().toISOString().split('T')[0],\n    status: 'processing'\n  }\n}];"
+      },
+      "id": "process-family-data",
+      "name": "Process Family Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "nodeCredentialType": "httpHeaderAuth",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "gpt-4"
+            },
+            {
+              "name": "messages",
+              "value": "=[\n  {\n    \"role\": \"system\",\n    \"content\": \"You are an insurance expert analyzing family profiles. Provide risk assessment and recommendations.\"\n  },\n  {\n    \"role\": \"user\",\n    \"content\": \"Analyze this family insurance profile: {{ $json.familyName }} with {{ $json.members.length }} members. Total policies: {{ $json.totalPolicies }}, Total value: {{ $json.totalValue }}, Risk level: {{ $json.riskLevel }}. Provide recommendations for optimal coverage.\"\n  }\n]"
+            },
+            {
+              "name": "temperature",
+              "value": 0.7
+            },
+            {
+              "name": "max_tokens",
+              "value": 500
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ai-analysis",
+      "name": "AI Analysis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [680, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "openai-api-key",
+          "name": "OpenAI API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:8001/families",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "nodeCredentialType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id",
+              "value": "={{ $json.familyId }}"
+            },
+            {
+              "name": "family_name",
+              "value": "={{ $json.familyName }}"
+            },
+            {
+              "name": "members",
+              "value": "={{ $json.members }}"
+            },
+            {
+              "name": "total_policies",
+              "value": "={{ $json.totalPolicies }}"
+            },
+            {
+              "name": "total_value",
+              "value": "={{ $json.totalValue }}"
+            },
+            {
+              "name": "risk_level",
+              "value": "={{ $json.riskLevel }}"
+            },
+            {
+              "name": "last_assessment",
+              "value": "={{ $json.lastAssessment }}"
+            },
+            {
+              "name": "status",
+              "value": "complete"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "save-family-profile",
+      "name": "Save Family Profile",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [900, 300],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "insurance-api-auth",
+          "name": "Insurance API Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Combine AI analysis with family data\nconst familyData = $('Process Family Data').first().json;\nconst aiAnalysis = $('AI Analysis').first().json;\n\n// Extract AI recommendations\nconst aiResponse = aiAnalysis.choices[0].message.content;\n\n// Create comprehensive family profile\nconst comprehensiveProfile = {\n  ...familyData,\n  aiAnalysis: aiResponse,\n  recommendations: extractRecommendations(aiResponse),\n  riskScore: calculateRiskScore(familyData),\n  timestamp: new Date().toISOString()\n};\n\nfunction extractRecommendations(aiText) {\n  // Simple extraction - in production, use more sophisticated parsing\n  const recommendations = [];\n  if (aiText.includes('life insurance')) recommendations.push('ביטוח חיים');\n  if (aiText.includes('health insurance')) recommendations.push('ביטוח בריאות');\n  if (aiText.includes('car insurance')) recommendations.push('ביטוח רכב');\n  if (aiText.includes('home insurance')) recommendations.push('ביטוח בית');\n  return recommendations;\n}\n\nfunction calculateRiskScore(familyData) {\n  let score = 0;\n  \n  // Age factor\n  familyData.members.forEach(member => {\n    if (member.age > 60) score += 20;\n    else if (member.age > 40) score += 10;\n  });\n  \n  // Policy coverage factor\n  if (familyData.totalPolicies < 2) score += 15;\n  \n  // Value factor\n  if (familyData.totalValue > 5000000) score += 10;\n  \n  return Math.min(score, 100);\n}\n\nreturn [{\n  json: comprehensiveProfile\n}];"
+      },
+      "id": "create-comprehensive-profile",
+      "name": "Create Comprehensive Profile",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "response",
+      "name": "Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "error-check",
+              "leftValue": "={{ $json.success }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equal"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "error-check",
+      "name": "Error Check",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1020, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": false,\n  \"error\": \"Failed to process family profile\",\n  \"details\": \"{{ $json }}\"\n}",
+        "options": {}
+      },
+      "id": "error-response",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1240, 200]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Process Family Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Family Data": {
+      "main": [
+        [
+          {
+            "node": "AI Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Analysis": {
+      "main": [
+        [
+          {
+            "node": "Save Family Profile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Family Profile": {
+      "main": [
+        [
+          {
+            "node": "Create Comprehensive Profile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Comprehensive Profile": {
+      "main": [
+        [
+          {
+            "node": "Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Check": {
+      "main": [
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "id": "sheli-mizrahi-family-insurance-workflow"
+}

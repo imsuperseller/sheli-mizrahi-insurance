@@ -1,0 +1,368 @@
+{
+  "family_name": "משפחת הר",
+  "analysis_date": "12/08/2025",
+  "total_members": 5,
+  "total_monthly_premium": 6832.620000000002,
+  "total_policies": 54,
+  "family_members": [
+    {
+      "name": "עמית",
+      "insurance_policies": [
+        {
+          "main_branch": "ביטוח סיעודי",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "357035674"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 7.43,
+          "policy_number": "506619623"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 6.53,
+          "policy_number": "506619623"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 3.81,
+          "policy_number": "506619623"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 3.11,
+          "policy_number": "506619623"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 2.06,
+          "policy_number": "506619623"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 12.58,
+          "policy_number": "506619623"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 4.79,
+          "policy_number": "506619623"
+        },
+        {
+          "main_branch": "כתב שירות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 1.6,
+          "policy_number": "506619623"
+        }
+      ],
+      "total_monthly_premium": 41.91,
+      "policy_count": 9
+    },
+    {
+      "name": "יונתן",
+      "insurance_policies": [
+        {
+          "main_branch": "ביטוח רכב",
+          "company": "איי אי ג'י ישראל חברה לביטוח בע\"מ",
+          "premium": 1473.0,
+          "policy_number": "1427086624"
+        },
+        {
+          "main_branch": "ביטוח רכב",
+          "company": "איי אי ג'י ישראל חברה לביטוח בע\"מ",
+          "premium": 2704.53,
+          "policy_number": "1427086624"
+        },
+        {
+          "main_branch": "ביטוח רכב",
+          "company": "איי אי ג'י ישראל חברה לביטוח בע\"מ",
+          "premium": 264.54,
+          "policy_number": "1427086624"
+        },
+        {
+          "main_branch": "ביטוח רכב",
+          "company": "איי אי ג'י ישראל חברה לביטוח בע\"מ",
+          "premium": 129.63,
+          "policy_number": "1427086624"
+        },
+        {
+          "main_branch": "ביטוח רכב",
+          "company": "איי אי ג'י ישראל חברה לביטוח בע\"מ",
+          "premium": 101.3,
+          "policy_number": "1427086624"
+        },
+        {
+          "main_branch": "ביטוח דירה",
+          "company": "איי אי ג'י ישראל חברה לביטוח בע\"מ",
+          "premium": 962.42,
+          "policy_number": "31139731725"
+        },
+        {
+          "main_branch": "ביטוח דירה",
+          "company": "איי אי ג'י ישראל חברה לביטוח בע\"מ",
+          "premium": 256.58,
+          "policy_number": "31139731725"
+        },
+        {
+          "main_branch": "ביטוח סיעודי",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 57.81,
+          "policy_number": "305949703"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "98762081235"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 67.88,
+          "policy_number": "841060416"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 81.34,
+          "policy_number": "841060416"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "98762081235"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "98762081235"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "98762081235"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "98762081235"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "98762081235"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "98762081235"
+        },
+        {
+          "main_branch": "ביטוח חיים",
+          "company": "מגדל חברה לביטוח בע\"מ",
+          "premium": 117.05,
+          "policy_number": "23155244"
+        }
+      ],
+      "total_monthly_premium": 6216.080000000002,
+      "policy_count": 18
+    },
+    {
+      "name": "אנה",
+      "insurance_policies": [
+        {
+          "main_branch": "ביטוח סיעודי",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "807135280"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 10.29,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מגדל חברה לביטוח בע\"מ",
+          "premium": 10.85,
+          "policy_number": "23153980"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 9.05,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 37.17,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 5.28,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 4.31,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 2.85,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "כתב שירות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 8.11,
+          "policy_number": "504576535"
+        }
+      ],
+      "total_monthly_premium": 87.91,
+      "policy_count": 9
+    },
+    {
+      "name": "אליסה",
+      "insurance_policies": [
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 36.48,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מגדל חברה לביטוח בע\"מ",
+          "premium": 124.07,
+          "policy_number": "23153982"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 8.56,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 122.55,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 9.05,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 3.9,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 10.4,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "כתב שירות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 12.88,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח חיים",
+          "company": "מגדל חברה לביטוח בע\"מ",
+          "premium": 70.92,
+          "policy_number": "23155245"
+        }
+      ],
+      "total_monthly_premium": 398.80999999999995,
+      "policy_count": 9
+    },
+    {
+      "name": "איתן",
+      "insurance_policies": [
+        {
+          "main_branch": "ביטוח סיעודי",
+          "company": "מנורה מבטחים ביטוח בע\"מ",
+          "premium": 0.0,
+          "policy_number": "806683827"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 10.29,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "מגדל חברה לביטוח בע\"מ",
+          "premium": 10.85,
+          "policy_number": "23153981"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 9.05,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 37.17,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 5.28,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 4.31,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "ביטוח בריאות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 2.85,
+          "policy_number": "504576535"
+        },
+        {
+          "main_branch": "כתב שירות",
+          "company": "הראל חברה לביטוח בע\"מ",
+          "premium": 8.11,
+          "policy_number": "504576535"
+        }
+      ],
+      "total_monthly_premium": 87.91,
+      "policy_count": 9
+    }
+  ]
+}

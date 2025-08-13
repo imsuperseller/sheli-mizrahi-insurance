@@ -1,0 +1,58 @@
+[
+  {
+    "id": "64d68af5-f123-4f49-8f6b-43fc3c1161b7",
+    "family_name": "משפחת הר",
+    "analysis_date": "13/08/2025",
+    "total_members": 5,
+    "total_policies": 49,
+    "total_monthly_premium": 5323.140000000001,
+    "family_members": [
+      {
+        "name": "עמית",
+        "policies": 8,
+        "premium": 41.91,
+        "type": "ביטוח בריאות, כתב שירות",
+        "file_source": "eb85eacd-477e-4694-b43d-785974a39d94_עמית הר ביטוח 05.08.25.xlsx"
+      },
+      {
+        "name": "יונתן",
+        "policies": 17,
+        "premium": 4743.080000000001,
+        "type": "ביטוח רכב, ביטוח דירה, ביטוח סיעודי, ביטוח בריאות, ביטוח חיים",
+        "file_source": "ec2403ba-a6a3-4adf-9706-88d5de37cba9_יונתן הר ביטוח 04.08.25.xlsx"
+      },
+      {
+        "name": "אנה",
+        "policies": 8,
+        "premium": 87.91,
+        "type": "ביטוח בריאות, כתב שירות",
+        "file_source": "39782d05-8cbb-4dfa-af5b-80e864d64d0f_אנה הר ביטוח 05.08.25.xlsx"
+      },
+      {
+        "name": "אליסה",
+        "policies": 8,
+        "premium": 362.33,
+        "type": "ביטוח בריאות, כתב שירות, ביטוח חיים",
+        "file_source": "09608e79-3ef9-4957-9150-f9cd5a26c246_אליסה הר ביטוח 04.08.25.xlsx"
+      },
+      {
+        "name": "איתן",
+        "policies": 8,
+        "premium": 87.91,
+        "type": "ביטוח בריאות, כתב שירות",
+        "file_source": "b3cc79db-1145-4fea-b02c-e1c0fdc8a21a_איתן הר ביטוח 05.08.25.xlsx"
+      }
+    ],
+    "files_processed": [
+      "eb85eacd-477e-4694-b43d-785974a39d94_עמית הר ביטוח 05.08.25.xlsx",
+      "ec2403ba-a6a3-4adf-9706-88d5de37cba9_יונתן הר ביטוח 04.08.25.xlsx",
+      "39782d05-8cbb-4dfa-af5b-80e864d64d0f_אנה הר ביטוח 05.08.25.xlsx",
+      "09608e79-3ef9-4957-9150-f9cd5a26c246_אליסה הר ביטוח 04.08.25.xlsx",
+      "b3cc79db-1145-4fea-b02c-e1c0fdc8a21a_איתן הר ביטוח 05.08.25.xlsx"
+    ],
+    "analysis_method": "BMAD + MCP Integration",
+    "ai_enhanced": true,
+    "validation_status": "passed",
+    "created_at": "2025-08-13T12:46:56.263039"
+  }
+]
